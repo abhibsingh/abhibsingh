@@ -1,0 +1,40 @@
+name: EvalGuard QA
+on:
+  push:
+    paths: ['evalguard-qa/**', '.github/workflows/evalguard-qa.yml']
+  pull_request:
+    paths: ['evalguard-qa/**', '.github/workflows/evalguard-qa.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.11', '3.12', '3.13']
+    defaults:
+      run:
+        working-directory: evalguard-qa
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Unit and CLI integration tests
+        run: python -m unittest discover -s tests -v
+      - name: Passing synthetic baseline
+        run: python -m evalguard --responses examples/responses.good.json --out reports/baseline
+      - name: Verify the regression gate rejects bad responses
+        shell: bash
+        run: |
+          set +e
+          python -m evalguard --responses examples/responses.regression.json --out reports/regression
+          status=$?
+          set -e
+          test "$status" -eq 1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: evalguard-reports-${{ matrix.python-version }}
+          path: evalguard-qa/reports/

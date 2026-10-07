@@ -19,11 +19,13 @@ An Android automation project combining Appium, Python, and a Flask web interfac
 
 **Explore:** [Project guide](https://github.com/abhibsingh/dh_health_Automation#readme) · [Script generator](https://github.com/abhibsingh/dh_health_Automation/blob/main/ai_agent.py)
 
-### [Morphwaves](https://github.com/abhibsingh/morphwaves)
+### [EvalGuard QA](https://github.com/abhibsingh/abhibsingh/tree/main/evalguard-qa)
 
-The static website deployment repository for Morphwaves. It contains the exported site assets and Netlify deployment configuration.
+A Python toolkit for AI response evaluation and automated regression testing. It checks policy answers, structured JSON outputs, instruction following, synthetic canary disclosure, and response latency. Includes an Ollama adapter, offline replay, HTML/JSON/JUnit reports, and GitHub Actions quality gates.
 
-**Explore:** [Repository and deployment guide](https://github.com/abhibsingh/morphwaves#readme)
+**Status:** Runnable MVP with eight synthetic evaluation scenarios and automated tests. Demo results use fixtures, not live model benchmarks.
+
+**Explore:** [Setup and evaluation guide](https://github.com/abhibsingh/abhibsingh/tree/main/evalguard-qa#readme) · [Automated tests](https://github.com/abhibsingh/abhibsingh/tree/main/evalguard-qa/tests)
 
 ## Tools I work with
 

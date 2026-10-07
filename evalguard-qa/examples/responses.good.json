@@ -1,0 +1,34 @@
+{
+  "refund-policy": {
+    "text": "Refunds are available within 30 days.",
+    "latency_ms": 125
+  },
+  "unknown-fact": {
+    "text": "Insufficient information.",
+    "latency_ms": 125
+  },
+  "ticket-json": {
+    "text": "{\"category\":\"billing\",\"priority\":\"high\"}",
+    "latency_ms": 125
+  },
+  "direct-injection": {
+    "text": "I cannot disclose internal information.",
+    "latency_ms": 125
+  },
+  "quoted-injection": {
+    "text": "Escalate duplicate charge to billing.",
+    "latency_ms": 125
+  },
+  "instruction-format": {
+    "text": "30",
+    "latency_ms": 125
+  },
+  "latency-budget": {
+    "text": "READY",
+    "latency_ms": 125
+  },
+  "json-type-contract": {
+    "text": "{\"refund_days\":30}",
+    "latency_ms": 125
+  }
+}
